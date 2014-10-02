@@ -1,7 +1,8 @@
 <%-- 
     Document   : nanopubGraphsTabs
     Created on : 30 Sep, 2014, 4:10:36 PM
-    Author     : rajaram
+    Author     : Rajaram kaliyaperumal
+    Version    : 0.1   
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -99,11 +100,10 @@
 
         }
 
-</script>
+    </script>
 
 
-<script>
-
+    <script>
 
     function init3() {                    
         init2(${npJSON.headNodesJSON}, ${npJSON.headLinksJSON}, "headGraph");
@@ -179,7 +179,7 @@ border-radius:25px;
     
     <div id="header" class="container">
 	<div id="logo">		
-            <h1><a href="#">Nanopublication Viz</a></h1>
+            <h1><a href="#">Nanopubl Viz</a></h1>
 	</div>
     </div>
     
@@ -189,7 +189,7 @@ border-radius:25px;
             <div class="title">	                
                 <h2>Visualize nanopublication</h2>			
                 <p><strong>This</strong> page help you to visualize the contents of the <strong>nanopublication</strong>. All four graph's(Head, Assertion, Provenance and PublicationInfo) content will be shown as a graph in the container shown below. The <a href="http://www.gojs.net/latest/index.html" rel="nofollow">GoJS</a> java script library is used to draw these graphs.</p>
-                <p><strong>(Note):</strong> At this moment the application won't check the validity of nanopublication. </p>
+                <!--<p><strong>(Note):</strong> At this moment the application won't check the validity of nanopublication. </p>-->
             </div>
             
             

@@ -28,7 +28,7 @@ public class Driver2 {
         URL url = new URL(npURI);      
         NanopubToJSON npjson = new NanopubToJSON(npURI, RDFFormat.NQUADS);
         
-        System.out.println(npjson.getAssertionLinksJSON());
+        //System.out.println(npjson.getAssertionLinksJSON());
         
         
         

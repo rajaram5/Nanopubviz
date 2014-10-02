@@ -5,6 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * 
+ * @author Rajaram kaliyaperumal
+ * @since 29-09-2014
+ * @version 0.1
+ */
+
 @Controller
 //@RequestMapping(value = "/Nanopubviz/")
 public class HelloController {

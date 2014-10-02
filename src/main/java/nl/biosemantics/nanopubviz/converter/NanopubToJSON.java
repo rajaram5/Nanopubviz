@@ -7,15 +7,13 @@ package nl.biosemantics.nanopubviz.converter;
 
 import com.google.gson.Gson;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import nl.biosemantics.nanopubviz.pojo.Link;
+import nl.biosemantics.nanopubviz.pojo.NanopubJSON;
 import nl.biosemantics.nanopubviz.pojo.Node;
 import org.nanopub.MalformedNanopubException;
 import org.nanopub.Nanopub;
@@ -27,26 +25,22 @@ import org.openrdf.model.Statement;
 import org.openrdf.rio.RDFFormat;
 
 /**
- *
+ * <p>
+ * Class contains methods to convert nanopub object to nanopublication JSON
+ * format. 
+ * </p>
+ * 
  * @author Rajaram kaliyaperumal
  * @version 0.1
  * @since 29-09-2014
  */
 public class NanopubToJSON {
     
-    private String headNodesJSON;
-    private String headLinksJSON;
-    private String assertionNodesJSON;
-    private String assertionLinksJSON;
-    private String provenanceNodesJSON;
-    private String provenanceLinksJSON;
-    private String publicationInfoNodesJSON;
-    private String publicationInfoLinksJSON;
-    
+    private NanopubJSON nanopubJSON = null;   
     
     /**
      * <p>
-     * Get the nanopublication from the given and convert into GoJs 
+     * Get the nanopublication from the given URL and convert into GoJs 
      * (nodes and links) JSON format (e.g nodes and link json 
      * https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/conceptMap.html)
      * </p>
@@ -57,25 +51,27 @@ public class NanopubToJSON {
         
         Nanopub np; 
         Map<String, String> jsons;
+        this.nanopubJSON = new NanopubJSON();
+        
         
         URL url =  new URL(uriStr);        
         np = new NanopubImpl(url, format);           
             
         jsons =  convertToJSON(np.getHead());
-        this.headNodesJSON = jsons.get("node");
-        this.headLinksJSON = jsons.get("link");
+        nanopubJSON.setHeadNodesJSON(jsons.get("node"));
+        nanopubJSON.setHeadLinksJSON(jsons.get("link"));
             
         jsons =  convertToJSON(np.getAssertion());
-        this.assertionNodesJSON = jsons.get("node");
-        this.assertionLinksJSON = jsons.get("link");
+        nanopubJSON.setAssertionNodesJSON(jsons.get("node"));
+        nanopubJSON.setAssertionLinksJSON(jsons.get("link"));
             
         jsons =  convertToJSON(np.getProvenance());
-        this.provenanceNodesJSON = jsons.get("node");
-        this.provenanceLinksJSON = jsons.get("link");
+        nanopubJSON.setProvenanceNodesJSON(jsons.get("node"));
+        nanopubJSON.setProvenanceLinksJSON(jsons.get("link"));
             
         jsons =  convertToJSON(np.getPubinfo());
-        this.publicationInfoNodesJSON = jsons.get("node");
-        this.publicationInfoLinksJSON = jsons.get("link");
+        nanopubJSON.setPublicationInfoNodesJSON(jsons.get("node"));
+        nanopubJSON.setPublicationInfoLinksJSON(jsons.get("link"));
         
         
     }
@@ -195,115 +191,10 @@ public class NanopubToJSON {
     }
 
     /**
-     * @return the headNodesJSON
+     * @return the nanopubJSON
      */
-    public String getHeadNodesJSON() {
-        return headNodesJSON;
-    }
-
-    /**
-     * @return the headLinksJSON
-     */
-    public String getHeadLinksJSON() {
-        return headLinksJSON;
-    }
-
-    /**
-     * @return the assertionNodesJSON
-     */
-    public String getAssertionNodesJSON() {
-        return assertionNodesJSON;
-    }
-
-    /**
-     * @return the assertionLinksJSON
-     */
-    public String getAssertionLinksJSON() {
-        return assertionLinksJSON;
-    }
-
-    /**
-     * @return the provenanceNodesJSON
-     */
-    public String getProvenanceNodesJSON() {
-        return provenanceNodesJSON;
-    }
-
-    /**
-     * @return the provenanceLinksJSON
-     */
-    public String getProvenanceLinksJSON() {
-        return provenanceLinksJSON;
-    }
-
-    /**
-     * @return the publicationInfoNodesJSON
-     */
-    public String getPublicationInfoNodesJSON() {
-        return publicationInfoNodesJSON;
-    }
-
-    /**
-     * @return the publicationInfoLinksJSON
-     */
-    public String getPublicationInfoLinksJSON() {
-        return publicationInfoLinksJSON;
-    }
-
-    /**
-     * @param headNodesJSON the headNodesJSON to set
-     */
-    public void setHeadNodesJSON(String headNodesJSON) {
-        this.headNodesJSON = headNodesJSON;
-    }
-
-    /**
-     * @param headLinksJSON the headLinksJSON to set
-     */
-    public void setHeadLinksJSON(String headLinksJSON) {
-        this.headLinksJSON = headLinksJSON;
-    }
-
-    /**
-     * @param assertionNodesJSON the assertionNodesJSON to set
-     */
-    public void setAssertionNodesJSON(String assertionNodesJSON) {
-        this.assertionNodesJSON = assertionNodesJSON;
-    }
-
-    /**
-     * @param assertionLinksJSON the assertionLinksJSON to set
-     */
-    public void setAssertionLinksJSON(String assertionLinksJSON) {
-        this.assertionLinksJSON = assertionLinksJSON;
-    }
-
-    /**
-     * @param provenanceNodesJSON the provenanceNodesJSON to set
-     */
-    public void setProvenanceNodesJSON(String provenanceNodesJSON) {
-        this.provenanceNodesJSON = provenanceNodesJSON;
-    }
-
-    /**
-     * @param provenanceLinksJSON the provenanceLinksJSON to set
-     */
-    public void setProvenanceLinksJSON(String provenanceLinksJSON) {
-        this.provenanceLinksJSON = provenanceLinksJSON;
-    }
-
-    /**
-     * @param publicationInfoNodesJSON the publicationInfoNodesJSON to set
-     */
-    public void setPublicationInfoNodesJSON(String publicationInfoNodesJSON) {
-        this.publicationInfoNodesJSON = publicationInfoNodesJSON;
-    }
-
-    /**
-     * @param publicationInfoLinksJSON the publicationInfoLinksJSON to set
-     */
-    public void setPublicationInfoLinksJSON(String publicationInfoLinksJSON) {
-        this.publicationInfoLinksJSON = publicationInfoLinksJSON;
+    public NanopubJSON getNanopubJSON() {
+        return nanopubJSON;
     }
     
 }

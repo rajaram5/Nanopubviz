@@ -20,37 +20,45 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- *
- * @author rajaram
+ * <p>
+ * Controller class to handle REST call's directed to /nanopublication path. 
+ * </p>
+ * @author Rajaram kaliyaperumal
+ * @since 29-09-2014
+ * @version 0.1
  */
 @Controller
 @RequestMapping(value = "/nanopublication")
-public class Nanopublication {   
+public class Nanopublication {    
     
-    
-    
+    /**
+     * <p>
+     * Method to handle the GET request with nanopublication URI. Returns 
+     * nanopulication in JSON format which can be visualized using GoJS 
+     * java script. 
+     * </p>
+     * @param uri   Nanopublication URI
+     * @return Nanopublication in JSON format.
+     */
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ModelAndView showNanopub(@RequestParam(value="uri") String uri) {
         
         NanopubToJSON npJSON = null;
-        String serverErrorMessage = "no error";
+        String serverErrorMessage = "";
             
         ModelAndView mav = new ModelAndView();
         try {
             npJSON = new NanopubToJSON(uri, RDFFormat.NQUADS); 
-            //System.out.println("URI = "+uri);
+            mav.addObject("npJSON", npJSON.getNanopubJSON());
+            mav.setViewName("nanopubGraphsTabs");
         }
         catch (MalformedNanopubException | OpenRDFException | IOException e) {
             serverErrorMessage = e.getMessage();
+            mav.addObject("serverErrorMessage", serverErrorMessage);
+            mav.setViewName("error");
             Logger.getLogger(Nanopublication.class.getName()).
                     log(Level.SEVERE, null, e);
-        }      
-        
-        System.out.println("Message "+npJSON.getHeadNodesJSON());
-        
-        mav.addObject("npJSON", npJSON);
-        mav.addObject("serverErrorMessage", serverErrorMessage);
-        mav.setViewName("nanopubGraphsTabs");
+        }
         return mav;
     }
     

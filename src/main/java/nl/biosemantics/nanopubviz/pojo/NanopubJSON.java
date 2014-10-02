@@ -8,7 +8,9 @@ package nl.biosemantics.nanopubviz.pojo;
 
 /**
  *
- * @author rajaram
+ * @author Rajaram kaliyaperumal
+ * @since 29-09-2014
+ * @version 0.1
  */
 public class NanopubJSON {
     
