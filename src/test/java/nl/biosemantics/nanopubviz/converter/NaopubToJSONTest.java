@@ -24,7 +24,7 @@ public class NaopubToJSONTest {
     }
     
     @Test
-    public void validNanopubURI() throws MalformedNanopubException, IOException, OpenRDFException {
+    public void testValidNanopubURI() throws MalformedNanopubException, IOException, OpenRDFException {
         String npURI = "http://rdf.biosemantics.org/nanopubs/cpm/gene_disease_associations/000001"; 
         
         NanopubToJSON test = new NanopubToJSON(npURI, RDFFormat.NQUADS);
@@ -33,14 +33,14 @@ public class NaopubToJSONTest {
     }
     
     @Test(expected=MalformedNanopubException.class)
-    public void invalidNanopub() throws Exception {
+    public void testInvalidNanopub() throws Exception {
         String npURI = "http://rdf.biosemantics.org/nanopubs/cpm/protein_protein_associations/000001"; 
         
         NanopubToJSON test = new NanopubToJSON(npURI, RDFFormat.NQUADS);
     }
     
     @Test(expected=IOException.class)
-    public void invalidNanopubURL() throws Exception {
+    public void testInvalidNanopubURL() throws Exception {
         String npURI = "http://rdf.biosemantics.org/nanopubs/000001-invalid"; 
         
         NanopubToJSON test = new NanopubToJSON(npURI, RDFFormat.NQUADS);

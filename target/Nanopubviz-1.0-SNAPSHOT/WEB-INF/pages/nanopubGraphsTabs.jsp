@@ -1,8 +1,7 @@
 <%-- 
-    Document   : nanopubGraphsTabs
-    Created on : 30 Sep, 2014, 4:10:36 PM
-    Author     : Rajaram kaliyaperumal
-    Version    : 0.1   
+    Document   : nanoPubTabs
+    Created on : 2 Oct, 2014, 2:47:06 PM
+    Author     : rajaram
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -125,26 +124,68 @@
 </script>
 
 <script> 
-$(document).ready(function(){
+$(document).ready(function(){    
+    
   $("#head").click(function(){
-    $("#headGraph").slideToggle("slow");
+      
+      
+      $("#head").css("background","#9DC45F")
+      $("#assertion").css("background","#4C4532")
+      $("#provenance").css("background","#4C4532")
+      $("#publicationInfo").css("background","#4C4532")
+      
+    $("#assertionGraph").hide();
+    $("#provenanceGraph").hide()
+    $("#publicationInfoGraph").hide()
+    
+    $("#headGraph").show();
   });
   
   $("#assertion").click(function(){
-    $("#assertionGraph").slideToggle("slow");
+      
+      $("#head").css("background","#4C4532")
+      $("#assertion").css("background","#9DC45F")
+      $("#provenance").css("background","#4C4532")
+      $("#publicationInfo").css("background","#4C4532")
+      
+    $("#headGraph").hide();
+    $("#provenanceGraph").hide()
+    $("#publicationInfoGraph").hide()
+      
+    $("#assertionGraph").show();
   });
   
   $("#provenance").click(function(){
-    $("#provenanceGraph").slideToggle("slow");
+      
+      $("#head").css("background","#4C4532")
+      $("#assertion").css("background","#4C4532")
+      $("#provenance").css("background","#9DC45F")
+      $("#publicationInfo").css("background","#4C4532")
+      
+    $("#headGraph").hide();
+    $("#assertionGraph").hide()
+    $("#publicationInfoGraph").hide()
+    
+    $("#provenanceGraph").show();
   });
   
   $("#publicationInfo").click(function(){
-    $("#publicationInfoGraph").slideToggle("slow");
-  });
-  
-  
+      
+      $("#head").css("background","#4C4532")
+      $("#assertion").css("background","#4C4532")
+      $("#provenance").css("background","#4C4532")
+      $("#publicationInfo").css("background","#9DC45F")
+      
+    $("#headGraph").hide();
+    $("#assertionGraph").hide()
+    $("#provenanceGraph").hide()
+    
+    $("#publicationInfoGraph").show();
+  }); 
   
 });
+
+
 </script>
 
 
@@ -157,19 +198,48 @@ $(document).ready(function(){
 </script>-->
 
 <style> 
-#head,#assertion,#provenance,#publicationInfo
+.selected
 {
-padding:5px;
+/*padding:5px;
 text-align:center;
-background-color:#e5eecc;
+background-color: #9DC45F;
 border:2px solid #a1a1a1;
 border-radius:25px;
+display: inline-block*/
+
+display: inline-block;
+padding:5px;
+background: #9DC45F;
+letter-spacing: 0.20em;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: 400;
+font-size: 0.90em;
+color: #FFF;
 }
+
+.unselected
+{
+display: inline-block;
+padding:5px;
+background: #4C4532;
+letter-spacing: 0.20em;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: 400;
+font-size: 0.90em;
+color: #FFF;
+}
+
 .graphLocal {
   padding:200px;
   border-radius:25px;
   overflow: hidden;
   border:2px solid #a1a1a1;
+}
+
+#tabs .ui-tabs-active {
+  background: yellow;
 }
 </style>
     
@@ -192,18 +262,26 @@ border-radius:25px;
                 <!--<p><strong>(Note):</strong> At this moment the application won't check the validity of nanopublication. </p>-->
             </div>
             
+
             
-           <div id="head">click here to see HEAD GRAPH content</div>
-                <div class="graphLocal" id="headGraph" style="text-align: center;"> </div>
-           
-           <div id="assertion">click here to see ASSERTION GRAPH content</div>
-                <div class="graphLocal" id="assertionGraph"> </div>
+            <div align="center">
                 
-           <div id="provenance">click here to see PROVENANCE GRAPH content</div>
-                    <div class="graphLocal" id="provenanceGraph"> </div> 
-                    
-            <div id="publicationInfo">click here to see PUBLICATIONINFO GRAPH content</div>
-                    <div class="graphLocal" id="publicationInfoGraph" > </div>
+                <div class="unselected" id="head">HEAD GRAPH</div>
+                <div class="unselected" id="assertion">ASSERTION GRAPH</div>
+                <div class="unselected" id="provenance">PROVENANCE GRAPH</div>
+                <div class="unselected" id="publicationInfo">PUBLICATIONINFO GRAPH</div>
+                
+                
+            </div>
+           
+           
+           <div class="graphLocal" id="headGraph"> </div>          
+           
+           <div class="graphLocal" id="assertionGraph"> </div>               
+           
+           <div class="graphLocal" id="provenanceGraph"> </div>                     
+            
+           <div class="graphLocal" id="publicationInfoGraph" > </div>
             
             
         </div>
@@ -211,7 +289,7 @@ border-radius:25px;
     
     
     <div id="copyright" class="container">	
-        <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-    </div> 
+       <p>&copy; Copyright 2014 - <a href="http://biosemantics.org/">Biosemantics Group</a>.</p></div> 
 </body>
 </html>
+
