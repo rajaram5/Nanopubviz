@@ -1,0 +1,8 @@
+nl/biosemantics/nanopubviz/controller/Nanopublication.class
+nl/biosemantics/nanopubviz/pojo/Node.class
+nl/biosemantics/nanopubviz/pojo/NanopubJSON.class
+nl/biosemantics/nanopubviz/pojo/Link.class
+nl/biosemantics/nanopubviz/controller/HelloController.class
+nl/biosemantics/nanopubviz/converter/NanopubToJSON.class
+nl/biosemantics/nanopubviz/test/Dummy.class
+nl/biosemantics/nanopubviz/test/Driver2.class

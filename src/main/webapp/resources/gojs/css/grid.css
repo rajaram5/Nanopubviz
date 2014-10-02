@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3 Jul, 2014, 3:18:49 PM
+    Author     : rajaram
+*/
+
+/*  BOX  */
+.graph {
+  display: inline-block;
+  width: 450px;
+  height: 350px;
+  margin: 1em;
+  border:2px solid #a1a1a1;
+  padding:10px 40px; 
+  background:#dddddd;
+  border-radius:25px;
+  overflow: hidden;
+}
+
+.graphLarge {
+  display: inline-block;
+  width: 650px;
+  height: 450px;
+  margin: 1em;
+  border:2px solid #a1a1a1;
+  padding:10px 40px; 
+  background:#dddddd;
+  border-radius:25px;
+}
+
+.graphContainer {
+  display: inline-block;
+  width: 850px;
+  height: 600px;
+  margin: 1em;
+  border:2px solid #a1a1a1;
+  padding:10px 40px; 
+  background:#dddddd;
+  border-radius:25px;
+}
+
+.graphH1{
+    text-align: center;
+    margin-top: -10px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.graphSpan{
+    background-color: white;
+}
+
+
