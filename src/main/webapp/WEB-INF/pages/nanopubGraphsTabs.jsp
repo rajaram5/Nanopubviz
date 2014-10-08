@@ -249,7 +249,7 @@ color: #FFF;
     
     <div id="header" class="container">
 	<div id="logo">		
-            <h1><a href="#">Nanopubl Viz</a></h1>
+            <h1><a href="#">Nanopub Viz</a></h1>
 	</div>
     </div>
     
