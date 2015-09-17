@@ -40,7 +40,7 @@ public class NanopubToJSON {
     
     /**
      * <p>
-     * Get the nanopublication from the given URL and convert into GoJs 
+     * Get nanopublication from the given URL and convert into GoJs 
      * (nodes and links) JSON format (e.g nodes and link json 
      * https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/conceptMap.html)
      * </p>

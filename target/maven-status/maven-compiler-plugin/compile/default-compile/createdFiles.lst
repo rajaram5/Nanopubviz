@@ -1,6 +1,6 @@
-nl/biosemantics/nanopubviz/pojo/NanopubJSON.class
 nl/biosemantics/nanopubviz/pojo/Node.class
-nl/biosemantics/nanopubviz/controller/NanopublicationController.class
 nl/biosemantics/nanopubviz/controller/HelloController.class
+nl/biosemantics/nanopubviz/controller/NanopublicationController.class
+nl/biosemantics/nanopubviz/pojo/NanopubJSON.class
 nl/biosemantics/nanopubviz/pojo/Link.class
 nl/biosemantics/nanopubviz/converter/NanopubToJSON.class

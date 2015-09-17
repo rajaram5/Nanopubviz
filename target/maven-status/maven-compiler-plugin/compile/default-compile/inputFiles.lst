@@ -1,6 +1,6 @@
-/home/rajaram/NetBeansProjects/Nanopubviz/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/pojo/Link.java
-/home/rajaram/NetBeansProjects/Nanopubviz/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/pojo/Node.java
-/home/rajaram/NetBeansProjects/Nanopubviz/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/pojo/NanopubJSON.java
-/home/rajaram/NetBeansProjects/Nanopubviz/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/controller/NanopublicationController.java
-/home/rajaram/NetBeansProjects/Nanopubviz/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/converter/NanopubToJSON.java
-/home/rajaram/NetBeansProjects/Nanopubviz/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/controller/HelloController.java
+/home/rajaram/NetBeansProjects/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/pojo/Link.java
+/home/rajaram/NetBeansProjects/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/pojo/Node.java
+/home/rajaram/NetBeansProjects/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/controller/HelloController.java
+/home/rajaram/NetBeansProjects/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/converter/NanopubToJSON.java
+/home/rajaram/NetBeansProjects/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/pojo/NanopubJSON.java
+/home/rajaram/NetBeansProjects/Nanopubviz/src/main/java/nl/biosemantics/nanopubviz/controller/NanopublicationController.java

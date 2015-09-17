@@ -41,14 +41,27 @@ public class NanopublicationController {
      * @return Nanopublication in JSON format.
      */
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public ModelAndView showNanopub(@RequestParam(value="uri") String uri) {
+    public ModelAndView showNanopub(@RequestParam(value = "uri") String uri,
+            @RequestParam(value = "format") String format) {
         
         NanopubToJSON npJSON = null;
         String serverErrorMessage = "";
             
         ModelAndView mav = new ModelAndView();
         try {
-            npJSON = new NanopubToJSON(uri, RDFFormat.NQUADS); 
+            if (format.contentEquals("trig")) {
+                npJSON = new NanopubToJSON(uri, RDFFormat.TRIG);
+            }
+            else if (format.contentEquals("nq")) {
+                npJSON = new NanopubToJSON(uri, RDFFormat.NQUADS);
+            }
+            else {
+                 serverErrorMessage = "Unknown RDF format";            
+                 mav.addObject("serverErrorMessage", serverErrorMessage);            
+                 mav.setViewName("error");
+                
+            }
+             
             mav.addObject("npJSON", npJSON.getNanopubJSON());
             mav.setViewName("nanopubGraphsTabs");
         }
