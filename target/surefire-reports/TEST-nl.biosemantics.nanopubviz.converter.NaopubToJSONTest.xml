@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" time="0.175" errors="0" skipped="4">
+<testsuite tests="4" failures="0" name="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" time="0.167" errors="0" skipped="4">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -60,16 +60,16 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testInvalidNanopub" time="0.208">
+  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testInvalidNanopub" time="0.25">
     <skipped/>
   </testcase>
-  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testValidNanopubURI" time="0.21">
+  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testValidNanopubURI" time="0.253">
     <skipped/>
   </testcase>
-  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testValidDownloadableNanopubURI" time="0.211">
+  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testInvalidNanopubURL" time="0.257">
     <skipped/>
   </testcase>
-  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testInvalidNanopubURL" time="0.212">
+  <testcase classname="nl.biosemantics.nanopubviz.converter.NaopubToJSONTest" name="testValidDownloadableNanopubURI" time="0.26">
     <skipped/>
   </testcase>
 </testsuite>

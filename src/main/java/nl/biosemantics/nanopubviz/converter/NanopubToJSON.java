@@ -175,16 +175,18 @@ public class NanopubToJSON {
             
             URI uri = (URI) rs;  
             name = uri.getLocalName();
+            if (name.isEmpty()) { 
+                name = uri.toString();
+            }  
+            else {            
+                name = ":" + name;
+            }
         }            
         else {
-            Literal litreal = (Literal) rs;
-            name = litreal.getLabel();
-        }        
-        
-        if (name.isEmpty()) { 
-            URI uri = (URI) rs; 
-            name = uri.toString();
-        }  
+            Literal literal = (Literal) rs;
+            name = literal.getLabel();
+            //name = name.concat("\t[Literal]");
+        }
             
         return name;
         
